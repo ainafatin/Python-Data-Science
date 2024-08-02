@@ -1,0 +1,17 @@
+ID Number|Postcode|City|State
+5678|43000|Kajang|Selangor
+4321|63000|Ampang|Selangor
+3456|62250|Kulim|Kedah
+1234|43100|Baling|Kedah
+6789|62000|Muar|Johor
+9876|63100|Senai|Johor
+2345|63000|Yan|Kedah
+5432|43200|Ipoh|Perak
+8015|43300|Klang|Selangor
+7654|62100|Jitra|Kedah
+4567|63200|Pagoh|Johor
+8212|63100|Kulim|Kedah
+1231|33000|Muar|Johor
+0001|17500|Bachok|Kelantan
+7676|17500|Bachok|Kelantan
+1235|17500|Kuala Terengganu|Terengganu
