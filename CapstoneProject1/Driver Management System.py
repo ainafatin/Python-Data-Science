@@ -3,6 +3,8 @@ import datetime
 import pandas as pd
 from tabulate import tabulate
 
+# input function for updating driver information
+# only allows certain data types for each input
 def keyboardInput(datatype, caption, errorMessage, defaultValue = None):
     value = None 
     isInvalid = True 
@@ -22,6 +24,8 @@ def keyboardInput(datatype, caption, errorMessage, defaultValue = None):
             isInvalid = False
     return value
 
+# input function for driver registration
+# does not allow any blank inputs
 def noBlankInput(prompt):
     while True:
         value = input(prompt)
@@ -30,6 +34,7 @@ def noBlankInput(prompt):
         else:
             print("This field cannot be blank.")
 
+# driver registration function to register new drivers
 def Registration(regfile):
     try:
         id_number = noBlankInput("Enter ID number [4 digits]: ")
@@ -77,6 +82,7 @@ def Registration(regfile):
     except Exception as e:
         print("An error occured with the registration", e)
 
+# update menu function to update driver information
 def UpdateMenu(fileDetail,fileAddress):
     choice = -1
     while choice != 0:
@@ -98,6 +104,7 @@ def UpdateMenu(fileDetail,fileAddress):
         else:
             print("Invalid choice. Enter a valid option.")
 
+# update detail function to update existing driver information (additional details)
 def updateDetail(filename):
     try:
         lines = None
@@ -145,6 +152,7 @@ def updateDetail(filename):
     except Exception as e:
         print("Something went wrong when we create the file:", e, "\n")
 
+# update address function to update existing driver information (address)
 def updateAddress(filename):
     try:
         lines = None
@@ -192,6 +200,7 @@ def updateAddress(filename):
     except Exception as e:
         print("Something went wrong when we create the file:", e,"\n")
 
+# report function to print out reports
 def ReportMenu():
     choice = -1
     while choice != 0:
@@ -243,6 +252,7 @@ def ReportMenu():
         else:
             print("Invalid choice. Enter a valid option.")
 
+# license expiry function to check driver license expiration date
 def CheckLicenseExpiry():
     today = datetime.date.today()
     threemonths = today + datetime.timedelta(days=90)
@@ -260,7 +270,8 @@ def CheckLicenseExpiry():
     
     except Exception as e:
         print("An error occured:", e)
-            
+
+# menu function to display menu            
 def display_menu():
     print()
     print("+-------------------------------------------------------------+")
@@ -275,10 +286,12 @@ def display_menu():
     choice = input("Enter your choice: ")
     return choice
 
+# assign txt file to the corresponding variable
 regfile = "Driver.txt"
 filename1= "fileDetail.txt"
 filename2= "fileAddress.txt"
 
+# to run the program
 while True:
     choice = display_menu()
     if choice == "0":
